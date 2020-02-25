@@ -25,10 +25,18 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/@ree/sass/assets/fonts",
+                "output": "/assets/fonts/"
+              }
+         
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/@ree/sass/assets/sass/themes/ree.scss"    
             ],
             "scripts": []
           },
