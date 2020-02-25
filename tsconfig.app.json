@@ -2,7 +2,22 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": [],
+    "paths":{
+      "@angular/cdk": [
+        "./node_modules/@angular/cdk"
+      ],
+      "@angular/core": [
+        "./node_modules/@angular/core"
+      ],
+      "@angular/common": [
+        "./node_modules/@angular/common"
+      ],
+      "@angular/flex-layout": [
+        "./node_modules/@angular/flex-layout"
+      ]
+    }
+
   },
   "files": [
     "src/main.ts",
