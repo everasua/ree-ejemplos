@@ -10,6 +10,8 @@ import { SelectorModule } from '@ree/selector';
 import { DropdownModule } from '@ree/dropdown';
 import { RadioModule } from '@ree/radio';
 import { DatepickerModule } from '@ree/datepicker';
+import { DropdownModule } from '@ree/dropdown';
+import { AccordionModule } from '@ree/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
