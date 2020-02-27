@@ -16,4 +16,19 @@
  
 </div>
 
-<ree-datepicker></ree-datepicker>
+<div>
+  <form [formGroup]="formGroup">
+    <div>
+        <ree-selector formControlName="selector" [id]="'selector1'" [typeInput]="'switch'" [label]="'Switch'"></ree-selector>
+    </div>
+    <div>
+       <ree-dropdown formControlName="dropdown" [label]="'Selector'" [list]="selectItems"> </ree-dropdown> 
+    </div>
+    <ree-dropdown formControlName="dropdown2" [label]="'Selector Multiple'" [list]="selectItems" [multiple]="true"> </ree-dropdown>
+    <ree-datepicker formControlName="datepicker" [id]="'datepicker'" [label]="'Fecha de emisión'"></ree-datepicker>
+    <ree-input formControlName="email" [id]="'input1'" [typeInput]="'email'" [label]="'Email'"></ree-input>
+    <ree-input formControlName="password" [id]="'input2'" [typeInput]="'password'" [label]="'Contraseña'"></ree-input>
+    <ree-radio formControlName="radioButton" [idRadioGroup]="'radioButton'" [radioButtons]="radioButtonConfig"></ree-radio>
+    <ree-button [label]="'Prueba formulario'" (clickEmitter)="verFormulario($event)"></ree-button>
+  </form>
+</div>
