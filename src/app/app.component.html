@@ -1,8 +1,18 @@
-<div class="container">
-  <!-- <h1 class="g-title">REE</h1> -->
-  <div class="c-header-logo">
-    <img class="c-header-logo-img" src="https://www.ree.es/sites/all/themes/webree/logo.png">
+<ree-header [appName]="appName" [headerOptions]="headerOptions" [selectedLanguage]="selectedLanguage" [languages]="languages" [menuItems]="menuItems"
+  (searchChangeEmit)="searchChangeEmit($event)"
+  (actionHeaderEmit)="actionHeaderEmit($event)"
+  (selectedLanguageEmit)="selectedLanguageEmit($event)"
+  (searchEmit)="searchEmit($event)">
+  <div login>
+    <div class="buttons">
+      <ree-button [label]="'Prueba formulario'" (clickEmitter)="verFormulario($event)"></ree-button>
+      <ree-button [label]="'Boton secundario'" [typeButton]="'btn-secondary'"></ree-button>
+      <ree-button [label]="'Boton secundario'" [disabled]="true"></ree-button>
+    </div>
   </div>
+</ree-header>
+<div class="container">
+
   <form [formGroup]="formGroup">
 
     <p>Dropdown simple</p>

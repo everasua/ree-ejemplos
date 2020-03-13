@@ -30,8 +30,12 @@
                 "glob": "**/*",
                 "input": "node_modules/@ree/sass/assets/fonts",
                 "output": "/assets/fonts/"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/@ree/sass/assets/images",
+                "output": "/assets/images/"
               }
-         
             ],
             "styles": [
               "src/styles.scss",
