@@ -1,6 +1,6 @@
-:host{
-  background-color:#AAA;
-}
+// :host{
+//   background-color:#AAA;
+// }
 .buttons{
     display: flex;
     flex-flow: row nowrap;
@@ -10,7 +10,7 @@
 .radios{
     display: flex;
     flex: row nowrap;
-    justify-content: end;
+    justify-content: flex-end;
 }
 .addMargin{
     margin: 0 50px;
@@ -23,39 +23,8 @@ h1{
     color: #069;
     float: center;
 }
-
-// .c-header {
-//     width: 100%;
-//     height: 54px;
-//     border-bottom: 1px solid #D0D0D0;
-//     background-color: #D0D0D0; // pink;//
-//     &-first-level{
-//       width: 100%;
-//       display: flex;
-//       flex-flow: row nowrap;
-//       align-items: center;
-//       justify-content: space-between;
-//     }
-//     &-logo{
-//       margin: 10px 0 10px 20px;
-//       box-sizing: border-box;
-//       flex-grow:1;
-//       & img{
-//         box-sizing: border-box;
-//        // margin: 10px 0 10px 20px;
-//         height: 34px;
-//         width: 64px;
-//       }
-//     }
-
-//     &-menu{
-      
-//       flex-grow:1;
-      
-//       &-img{
-//         margin: 15px 20px 15px 0;
-//         height: 20px;
-//         width: 20px;
-//       }
-//     }
-//   }
+.box-login{
+    display: flex;
+    flex-grow: row nowrap;
+    justify-content: space-around;
+}

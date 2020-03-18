@@ -4,10 +4,8 @@
   (selectedLanguageEmit)="selectedLanguageEmit($event)"
   (searchEmit)="searchEmit($event)">
   <div login>
-    <div class="buttons">
-      <ree-button [label]="'Prueba formulario'" (clickEmitter)="verFormulario($event)"></ree-button>
-      <ree-button [label]="'Boton secundario'" [typeButton]="'btn-secondary'"></ree-button>
-      <ree-button [label]="'Boton secundario'" [disabled]="true"></ree-button>
+    <div class="box-login">
+      <ree-login></ree-login>
     </div>
   </div>
 </ree-header>
