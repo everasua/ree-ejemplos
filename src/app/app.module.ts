@@ -9,8 +9,9 @@ import { SelectorModule } from '@ree/selector';
 import { DropdownModule } from '@ree/dropdown';
 import { RadioModule } from '@ree/radio';
 import { DatepickerModule } from '@ree/datepicker';
-import { HeaderModule } from '@ree/header';
-import { LoginModule } from '@ree/login';
+import { DialogModule } from '@ree/dialog';
+
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
@@ -29,8 +30,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RadioModule,
     DropdownModule,
     DatepickerModule,
-    HeaderModule,
-    LoginModule
+    DialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

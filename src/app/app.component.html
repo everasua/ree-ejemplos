@@ -1,4 +1,4 @@
-<ree-header [appName]="appName" [headerOptions]="headerOptions" [selectedLanguage]="selectedLanguage" [languages]="languages" [menuItems]="menuItems"
+<!-- <ree-header [appName]="appName" [headerOptions]="headerOptions" [selectedLanguage]="selectedLanguage" [languages]="languages" [menuItems]="menuItems"
   (searchChangeEmit)="searchChangeEmit($event)"
   (actionHeaderEmit)="actionHeaderEmit($event)"
   (selectedLanguageEmit)="selectedLanguageEmit($event)"
@@ -8,7 +8,7 @@
       <ree-login></ree-login>
     </div>
   </div>
-</ree-header>
+</ree-header> -->
 <div class="container">
 
   <form [formGroup]="formGroup">
@@ -43,7 +43,18 @@
       <ree-button [label]="'Prueba formulario'" (clickEmitter)="verFormulario($event)"></ree-button>
       <ree-button [label]="'Boton secundario'" [typeButton]="'btn-secondary'"></ree-button>
       <ree-button [label]="'Boton secundario'" [disabled]="true"></ree-button>
+      <ree-button [label]="'Abrir modal'" (click)="openModal()"></ree-button>
     </div>
 
+    <ree-dialog 
+      #saveChanges
+      [intervalClose]="5">
+        <div body>
+          <p>Testing modal</p>
+        </div>
+    </ree-dialog>
   </form>
+
+
+
 </div>

@@ -1,21 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IRadioButton } from '@ree/radio';
 import { ETypeSelector } from '@ree/selector';
-import { IMenuItems, ILanguages, ILanguage, IHeaderConfig } from '@ree/header';
+import { MatDialogContent, MatDialog } from '@angular/material';
+import { DialogComponent,DialogModule } from '@ree/dialog';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  @ViewChild('saveChanges', { static: true }) private _dialog: DialogComponent;
   public formGroup: FormGroup;
   public radioButtonConfig: Array<IRadioButton>;
   public selectItems;
   ETypeSelectorComparador = ETypeSelector;
   public appName = 'Nombre de la aplicación';
 
-  public languages: ILanguages = [
+  ngOnInit() { }
+
+  openModal(){
+    this._dialog.openDialog(900,'class',900,true, false);
+  }
+
+  public languages: any = [
     {
       language: 'Español',
       code: 'es',
@@ -33,12 +41,12 @@ export class AppComponent {
     }
   ];
 
-  public selectedLanguage: ILanguage = {
+  public selectedLanguage: any = {
     language: 'Inglés',
     code: 'en'
   };
 
-  public headerOptions: IHeaderConfig = {
+  public headerOptions: any = {
     optionalLinks: [{
       classIcon: 'icon-profile',
       label: 'enlace',
@@ -60,7 +68,7 @@ export class AppComponent {
     }
   };
 
-  public menuItems: IMenuItems = [
+  public menuItems: any = [
     {
       name: 'Planes anuales',
       subItems: [{
