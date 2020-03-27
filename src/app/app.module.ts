@@ -14,9 +14,13 @@ import { DialogModule } from '@ree/dialog';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SecondComponentComponent } from './components/second-component/second-component.component';
+import { FirstComponentComponent } from './components/first-component/first-component.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SecondComponentComponent,
+    FirstComponentComponent
   ],
   imports: [
     BrowserModule,

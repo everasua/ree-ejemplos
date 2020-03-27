@@ -1,28 +1,7 @@
 // :host{
 //   background-color:#AAA;
 // }
-.buttons{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-}
 
-.radios{
-    display: flex;
-    flex: row nowrap;
-    justify-content: flex-end;
-}
-.addMargin{
-    margin: 0 50px;
-}
-
-.container{
-    margin: 10px;
-}
-h1{
-    color: #069;
-    float: center;
-}
 .box-login{
     display: flex;
     flex-grow: row nowrap;

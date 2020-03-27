@@ -1,29 +1,15 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IRadioButton } from '@ree/radio';
-import { ETypeSelector } from '@ree/selector';
-import { MatDialogContent, MatDialog } from '@angular/material';
-import { DialogComponent,DialogModule } from '@ree/dialog';
+import { Component } from '@angular/core';
+import { IMenuItems, ILanguages, ILanguage, IHeaderConfig } from '@ree/header';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  @ViewChild('saveChanges', { static: true }) private _dialog: DialogComponent;
-  public formGroup: FormGroup;
-  public radioButtonConfig: Array<IRadioButton>;
-  public selectItems;
-  ETypeSelectorComparador = ETypeSelector;
+export class AppComponent {
+
   public appName = 'Nombre de la aplicación';
 
-  ngOnInit() { }
-
-  openModal(){
-    this._dialog.openDialog(900,'class',900,true, false);
-  }
-
-  public languages: any = [
+  public languages: ILanguages = [
     {
       language: 'Español',
       code: 'es',
@@ -41,12 +27,12 @@ export class AppComponent implements OnInit {
     }
   ];
 
-  public selectedLanguage: any = {
+  public selectedLanguage: ILanguage = {
     language: 'Inglés',
     code: 'en'
   };
 
-  public headerOptions: any = {
+  public headerOptions: IHeaderConfig = {
     optionalLinks: [{
       classIcon: 'icon-profile',
       label: 'enlace',
@@ -68,7 +54,7 @@ export class AppComponent implements OnInit {
     }
   };
 
-  public menuItems: any = [
+  public menuItems: IMenuItems = [
     {
       name: 'Planes anuales',
       subItems: [{
@@ -76,7 +62,7 @@ export class AppComponent implements OnInit {
         linkCategory: '/nuevo/enlace',
         subcategories: [{
           name: 'Enlace título',
-          link: 'link',
+          link: 'base',
         },
         {
           name: 'Enlace título medio',
@@ -84,7 +70,7 @@ export class AppComponent implements OnInit {
         },
         {
           name: 'Enlace título medio no, largo',
-          link: 'string',
+          link: 'second-form',
         }
         ]
       },
@@ -339,79 +325,22 @@ export class AppComponent implements OnInit {
     {
       name: 'Datos estructurales',
     }
-  ]
+  ];
 
-  constructor(private formBuilder: FormBuilder) {
-    this.radioButtonConfig = [
-      {
-        id: 'radio1',
-        label: 'Radio 1'
-      },
-      {
-        id: 'radio2',
-        label: 'Radio 2'
-      },
-      {
-        id: 'radio3',
-        label: 'Radio 3'
-      }
-    ];
-    this.selectItems = [
-      {
-        id: 'extraChese',
-        label: 'Extra cheese',
-        disabled: true
-      },
-      {
-        id: 'mushroom',
-        label: 'Mushroom'
-      },
-      {
-        id: 'onion',
-        label: 'Onion'
-      },
-      {
-        id: 'pepperoni',
-        label: 'Pepperoni'
-      },
-      {
-        id: 'sausage',
-        label: 'Sausage'
-      },
-      {
-        id: 'tomato',
-        label: 'Tomato'
-      }
-    ];
-    this.formGroup = this.formBuilder.group({
-      email: ['', [Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]],
-      password: ['dsf', [Validators.required]],
-      selector: [true],
-      dropdown: ['Tomato'],
-      dropdown2: [''],
-      datepicker: [null],
-      radioButton: ['', [Validators.required]]
-    });
+  constructor() {
   }
 
-  /**
-   * Ver por consola el resultado del formulario
-   * @param $event Evento recibido por parte del boton pulsado
-   */
-  verFormulario($event) {
-    console.log('$event: ', $event);
-    console.log('formGroup: ', this.formGroup);
-  }
+
   public searchChangeEmit($event) {
     console.log($event);
   }
-  public actionHeaderEmit($event){
+  public actionHeaderEmit($event) {
     console.log($event);
   }
-  public selectedLanguageEmit($event){
+  public selectedLanguageEmit($event) {
     console.log($event);
   }
-  public searchEmit($event){
+  public searchEmit($event) {
     console.log($event);
   }
 }

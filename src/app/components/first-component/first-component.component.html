@@ -1,0 +1,46 @@
+<div class="container">
+
+    <form [formGroup]="formGroup">
+  
+      <p>Dropdown simple</p>
+      <div>
+        <ree-dropdown formControlName="dropdown" [label]="'Selector'" [list]="selectItems"> </ree-dropdown>
+      </div>
+      <p>Dropdown Múltiple</p>
+      <ree-dropdown formControlName="dropdown2" [label]="'Selector Multiple'" [list]="selectItems" [multiple]="true">
+      </ree-dropdown>
+      <p>Datepicker</p>
+      <ree-datepicker formControlName="datepicker" [id]="'datepicker'" [label]="'Fecha de emisión'"></ree-datepicker>
+      <p>Email</p>
+      <ree-input formControlName="email" [id]="'input1'" [typeInput]="'email'" [label]="'Email'"></ree-input>
+      <p>Contraseña</p>
+      <ree-input formControlName="password" [id]="'input2'" [typeInput]="'password'" [label]="'Contraseña'"></ree-input>
+      <div class="radios">
+        <div class="addMargin">
+          <p>Radio</p>
+          <ree-radio formControlName="radioButton" [idRadioGroup]="'radioButton'" [radioButtons]="radioButtonConfig">
+          </ree-radio>
+        </div>
+        <div>
+          <p>Switch</p>
+  
+          <ree-selector formControlName="selector" [id]="'selector1'" [typeInput]="'switch'" [label]="'Switch'">
+          </ree-selector>
+        </div>
+      </div>
+      <div class="buttons">
+        <ree-button [label]="'Prueba formulario'" (clickEmitter)="verFormulario($event)"></ree-button>
+        <ree-button [label]="'Boton secundario'" [typeButton]="'btn-secondary'"></ree-button>
+        <ree-button [label]="'Boton secundario'" [disabled]="true"></ree-button>
+        <ree-button [label]="'Abrir modal'" (click)="openModal()"></ree-button>
+      </div>
+  
+      <ree-dialog 
+        #saveChanges
+        [intervalClose]="5">
+          <div body>
+            <p>Testing modal</p>
+          </div>
+      </ree-dialog>
+    </form>
+  </div>
