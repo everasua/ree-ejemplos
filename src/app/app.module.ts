@@ -10,8 +10,8 @@ import { DropdownModule } from '@ree/dropdown';
 import { RadioModule } from '@ree/radio';
 import { DatepickerModule } from '@ree/datepicker';
 import { DialogModule } from '@ree/dialog';
-
-
+import { HeaderModule } from '@ree/header';
+import { LoginModule } from '@ree/login';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SecondComponentComponent } from './components/second-component/second-component.component';
@@ -30,8 +30,10 @@ import { FirstComponentComponent } from './components/first-component/first-comp
     ButtonModule,
     SelectorModule,
     FormsModule,
+    HeaderModule,
     ReactiveFormsModule,
     RadioModule,
+    LoginModule,
     DropdownModule,
     DatepickerModule,
     DialogModule

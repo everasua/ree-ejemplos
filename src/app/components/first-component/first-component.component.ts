@@ -71,7 +71,7 @@ export class FirstComponentComponent implements OnInit {
   }
 
   openModal(){
-    this._dialog.openDialog(900,'class',900,true, false);
+    this._dialog.openDialog(900, 'class', 900, true, false);
   }
     /**
    * Ver por consola el resultado del formulario
