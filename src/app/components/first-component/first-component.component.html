@@ -4,10 +4,10 @@
   
       <p>Dropdown simple</p>
       <div>
-        <ree-dropdown formControlName="dropdown" [label]="'Selector'" [list]="selectItems"> </ree-dropdown>
+        <ree-dropdown formControlName="dropdown" [label]="'Selector'" [options]="selectItems"> </ree-dropdown>
       </div>
       <p>Dropdown Múltiple</p>
-      <ree-dropdown formControlName="dropdown2" [label]="'Selector Multiple'" [list]="selectItems" [multiple]="true">
+      <ree-dropdown formControlName="dropdown2" [label]="'Selector Multiple'" [options]="selectItems" [multiple]="true">
       </ree-dropdown>
       <p>Datepicker</p>
       <ree-datepicker formControlName="datepicker" [id]="'datepicker'" [label]="'Fecha de emisión'"></ree-datepicker>
