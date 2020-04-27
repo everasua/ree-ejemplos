@@ -73,6 +73,9 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "es5": {
+              "tsConfig": "./tsconfig.app.es5.json"
             }
           }
         },
@@ -84,6 +87,9 @@
           "configurations": {
             "production": {
               "browserTarget": "proyecto-ree:build:production"
+            },
+            "es5": {
+              "browserTarget": "proyecto-ree:build:es5"
             }
           }
         },

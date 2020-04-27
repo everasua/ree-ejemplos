@@ -1,0 +1,486 @@
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { IRadioButton } from '@ree/radio';
+import { ETypeSelector } from '@ree/selector';
+import { MatDialogContent, MatDialog } from '@angular/material';
+import { DialogComponent,DialogModule } from '@ree/dialog';
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent implements OnInit {
+  @ViewChild('saveChanges', { static: true }) private _dialog: DialogComponent;
+  public formGroup: FormGroup;
+  public radioButtonConfig: Array<IRadioButton>;
+  public selectItems;
+  ETypeSelectorComparador = ETypeSelector;
+  public appName = 'Nombre de la aplicación';
+
+  ngOnInit() {
+    let wind = window;
+    console.log(wind);
+   }
+
+  openModal(){
+    this._dialog.openDialog(900,'class',900,true, false);
+  }
+
+  data = [
+    {
+      title: 'titulo',
+      subTitle: '6 Marzo 2020',
+      paragContent: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, curabitur convallis metus in libero auctor massa lectus, porttitor',
+      imageSrc: '/assets/images/Rectangle-1.png',
+      buttonLabel: 'Button text',
+      alignCenter: false,
+      onlyImageText: false,
+    },
+    {
+      title: 'titulo 2',
+      subTitle: '6 Marzo 2020',
+      paragContent: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, curabitur convallis metus in libero auctor massa lectus, porttitor',
+      imageSrc: '/assets/images/Rectangle-1.png',
+      buttonLabel: 'Button text',
+      alignCenter: false,
+      onlyImageText: false,
+    },
+    {
+      title: 'titulo 3',
+      subTitle: '6 Marzo 2020',
+      paragContent: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, curabitur convallis metus in libero auctor massa lectus, porttitor',
+      imageSrc: '/assets/images/Rectangle-1.png',
+      buttonLabel: 'Button text',
+      alignCenter: false,
+      onlyImageText: false,
+    },
+    {
+      title: 'titulo 4',
+      subTitle: '6 Marzo 2020',
+      paragContent: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, curabitur convallis metus in libero auctor massa lectus, porttitor',
+      imageSrc: '/assets/images/Rectangle-1.png',
+      buttonLabel: 'Button text',
+      alignCenter: false,
+      onlyImageText: false,
+    },
+    {
+      title: 'titulo 5',
+      subTitle: '6 Marzo 2020',
+      paragContent: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, curabitur convallis metus in libero auctor massa lectus, porttitor',
+      imageSrc: '/assets/images/Rectangle-1.png',
+      buttonLabel: 'Button text',
+      alignCenter: false,
+      onlyImageText: false,
+    },
+    {
+      title: 'titulo 6',
+      subTitle: '6 Marzo 2020',
+      paragContent: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, curabitur convallis metus in libero auctor massa lectus, porttitor',
+      imageSrc: '/assets/images/Rectangle-1.png',
+      buttonLabel: 'Button text',
+      alignCenter: false,
+      onlyImageText: false,
+    },
+    {
+      title: 'titulo 7',
+      subTitle: '6 Marzo 2020',
+      paragContent: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, curabitur convallis metus in libero auctor massa lectus, porttitor',
+      imageSrc: '/assets/images/Rectangle-1.png',
+      buttonLabel: 'Button text',
+      alignCenter: false,
+      onlyImageText: false,
+    }
+  ]
+
+  public languages: any = [
+    {
+      language: 'Español',
+      code: 'es',
+      flagSrc: '/assets/images/flags/flag-spa.svg'
+    },
+    {
+      language: 'Inglés',
+      code: 'en',
+      flagSrc: '/assets/images/flags/flag-uk.svg'
+    },
+    {
+      language: 'Euskera',
+      code: 'eu',
+      flagSrc: '/assets/images/flags/flag-usa.svg'
+    }
+  ];
+
+  public selectedLanguage: any = {
+    language: 'Inglés',
+    code: 'en'
+  };
+
+  public headerOptions: any = {
+    optionalLinks: [{
+      classIcon: 'icon-profile',
+      label: 'enlace',
+      code: 'enlace'
+    },
+    {
+      color: 'blue', // black | blue
+      label: 'enlace',
+      code: 'enllace'
+    }],
+    searcher: {
+      label: 'Buscar',
+      dropdownLabel: 'Buscar en la aplicación',
+      closeSearchLabel: 'Cerrar búsqueda',
+      buttonDesktopLabel: '¡A buscar!'
+    },
+    login: {
+      label: 'Acceder'
+    }
+  };
+
+  public menuItems: any = [
+    {
+      name: 'Planes anuales',
+      subItems: [{
+        category: 'Categoría de planes anuales',
+        linkCategory: '/nuevo/enlace',
+        subcategories: [{
+          name: 'Enlace título',
+          link: 'link',
+        },
+        {
+          name: 'Enlace título medio',
+          link: 'https://www.google.es',
+        },
+        {
+          name: 'Enlace título medio no, largo',
+          link: 'string',
+        }
+        ]
+      },
+      {
+        category: '2º categoría de planes anualaes',
+        linkCategory: 'https://www.bbc.co.uk',
+        subcategories: [{
+          name: 'Enlace título',
+          link: 'link',
+        },
+        {
+          name: 'Enlace título medio',
+          link: 'string',
+        },
+        {
+          name: 'Enlace título medio no, largo',
+          link: 'string',
+        }
+        ]
+      }, {
+        category: 'Categoría de planes anuales',
+        linkCategory: '/nuevo/enlace',
+        subcategories: [{
+          name: 'Enlace título',
+          link: 'link',
+        },
+        {
+          name: 'Enlace título medio',
+          link: 'https://www.google.es',
+        },
+        {
+          name: 'Enlace título medio no, largo',
+          link: 'string',
+        }
+        ]
+      }, {
+        category: 'Categoría de planes anuales',
+        linkCategory: '/nuevo/enlace',
+        subcategories: [{
+          name: 'Enlace título',
+          link: 'link',
+        },
+        {
+          name: 'Enlace título medio',
+          link: 'https://www.google.es',
+        },
+        {
+          name: 'Enlace título medio no, largo',
+          link: 'string',
+        }
+        ]
+      }, {
+        category: 'Categoría de planes anuales',
+        linkCategory: '/nuevo/enlace',
+        subcategories: [{
+          name: 'Enlace título',
+          link: 'link',
+        },
+        {
+          name: 'Enlace título medio',
+          link: 'https://www.google.es',
+        },
+        {
+          name: 'Enlace título medio no, largo',
+          link: 'string',
+        }
+        ]
+      }, {
+        category: 'Categoría de planes anuales',
+        linkCategory: '/nuevo/enlace',
+        subcategories: [{
+          name: 'Enlace título',
+          link: 'link',
+        },
+        {
+          name: 'Enlace título medio',
+          link: 'https://www.google.es',
+        },
+        {
+          name: 'Enlace título medio no, largo',
+          link: 'string',
+        }
+        ]
+      }, {
+        category: 'Categoría de planes anuales',
+        linkCategory: '/nuevo/enlace',
+        subcategories: [{
+          name: 'Enlace título',
+          link: 'link',
+        },
+        {
+          name: 'Enlace título medio',
+          link: 'https://www.google.es',
+        },
+        {
+          name: 'Enlace título medio no, largo',
+          link: 'string',
+        }
+        ]
+      }, {
+        category: 'Categoría de planes anuales',
+        linkCategory: '/nuevo/enlace',
+        subcategories: [{
+          name: 'Enlace título',
+          link: 'link',
+        },
+        {
+          name: 'Enlace título medio',
+          link: 'https://www.google.es',
+        },
+        {
+          name: 'Enlace título medio no, largo',
+          link: 'string',
+        }
+        ]
+      }, {
+        category: 'Categoría de planes anuales',
+        linkCategory: '/nuevo/enlace',
+        subcategories: [{
+          name: 'Enlace título',
+          link: 'link',
+        },
+        {
+          name: 'Enlace título medio',
+          link: 'https://www.google.es',
+        },
+        {
+          name: 'Enlace título medio no, largo',
+          link: 'string',
+        }
+        ]
+      }, {
+        category: 'Categoría de planes anuales',
+        linkCategory: '/nuevo/enlace',
+        subcategories: [
+        ]
+      }]
+    },
+    {
+      name: 'Auditorías',
+      subItems: [{
+        category: 'Categoría',
+        subcategories: [{
+          name: 'Enlace título',
+          link: 'link',
+        },
+        {
+          name: 'Enlace título',
+          link: 'link',
+        },
+        {
+          name: 'Enlace título medio',
+          link: 'string',
+        },
+        {
+          name: 'Enlace título medio no, largo',
+          link: 'string',
+        }]
+      }, {
+        //category: 'Categoría de planes anualaes',
+        subcategories: [{
+          name: 'Enlace título',
+          link: 'link',
+        },
+        {
+          name: 'Enlace título medio',
+          link: 'string',
+        },
+        {
+          name: 'Enlace título medio no, largo',
+          link: 'string',
+        }
+        ]
+      }],
+    },
+    {
+      name: 'Anomalías',
+      links: [{
+        name: 'Enlace título',
+        link: 'link',
+      },
+      {
+        name: 'Enlace título medio',
+        link: 'string',
+      },
+      {
+        name: 'Enlace título medio no, largo',
+        link: 'string',
+      },
+      {
+        name: 'Enlace título',
+        link: 'link',
+      },
+      {
+        name: 'Enlace título medio',
+        link: 'https://www.google.es',
+      },
+      {
+        name: 'Enlace título medio no, largo',
+        link: 'string',
+      },
+      {
+        name: 'Enlace título',
+        link: 'link',
+      },
+      {
+        name: 'Enlace título medio',
+        link: 'https://www.google.es',
+      },
+      {
+        name: 'Enlace título medio no, largo',
+        link: 'string',
+      },
+      {
+        name: 'Enlace título',
+        link: 'link',
+      },
+      {
+        name: 'Enlace título medio',
+        link: 'https://www.google.es',
+      },
+      {
+        name: 'Enlace título medio no, largo',
+        link: 'string',
+      },
+      {
+        name: 'Enlace título',
+        link: 'link',
+      },
+      {
+        name: 'Enlace título medio',
+        link: 'https://www.google.es',
+      },
+      {
+        name: 'Enlace título medio no, largo',
+        link: 'string',
+      }
+      ]
+    },
+    {
+      name: 'Observaciones',
+    },
+    {
+      name: 'Informes',
+    },
+    {
+      name: 'Programas de trabajo',
+    },
+    {
+      name: 'Gestión de tiempos',
+    },
+    {
+      name: 'Datos estructurales',
+    }
+  ]
+
+  constructor(private formBuilder: FormBuilder) {
+    this.radioButtonConfig = [
+      {
+        id: 'radio1',
+        label: 'Radio 1'
+      },
+      {
+        id: 'radio2',
+        label: 'Radio 2'
+      },
+      {
+        id: 'radio3',
+        label: 'Radio 3'
+      }
+    ];
+    this.selectItems = [
+      {
+        id: 'extraChese',
+        label: 'Extra cheese',
+        disabled: true
+      },
+      {
+        id: 'mushroom',
+        label: 'Mushroom'
+      },
+      {
+        id: 'onion',
+        label: 'Onion'
+      },
+      {
+        id: 'pepperoni',
+        label: 'Pepperoni'
+      },
+      {
+        id: 'sausage',
+        label: 'Sausage'
+      },
+      {
+        id: 'tomato',
+        label: 'Tomato'
+      }
+    ];
+    this.formGroup = this.formBuilder.group({
+      email: ['', [Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]],
+      password: ['dsf', [Validators.required]],
+      selector: [true],
+      dropdown: ['Tomato'],
+      dropdown2: [''],
+      datepicker: [null],
+      radioButton: ['', [Validators.required]]
+    });
+  }
+
+  /**
+   * Ver por consola el resultado del formulario
+   * @param $event Evento recibido por parte del boton pulsado
+   */
+  verFormulario($event) {
+    console.log('$event: ', $event);
+    console.log('formGroup: ', this.formGroup);
+  }
+  public searchChangeEmit($event) {
+    console.log($event);
+  }
+  public actionHeaderEmit($event){
+    console.log($event);
+  }
+  public selectedLanguageEmit($event){
+    console.log($event);
+  }
+  public searchEmit($event){
+    console.log($event);
+  }
+}
